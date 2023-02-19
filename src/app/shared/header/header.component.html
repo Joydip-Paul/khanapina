@@ -1,0 +1,99 @@
+<header class="header" [ngClass]="{'header-bg': isMouse, 'fixed-header': navbarFixed, 'header-black':isHeaderBlack}"
+    (scroll)="onscroll()">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="header-wrapper__toggler">
+                <div class="logo">
+                    <!-- <a href="#"><img src="assets/images/logo-2.png" alt=""></a> -->
+                    <a href="">KHANAPINA</a>
+                </div>
+                <div class="hamburger" (click)="openSidebar()" [ngClass]="{'hamburger-close':isSidebar}">
+                    <span class="first-bar"></span>
+                    <span class="second-bar"></span>
+                    <span class="third-bar"></span>
+                </div>
+            </div>
+            <div class="header-wrapper__nav" [ngClass]="{'sidebarActive': isSidebar}">
+                <a routerLink="/" class="logo d-lg-none"><img src="assets/img/logo.png" alt=""></a>
+                <ul>
+                    <li routerLink="/"><a>ABOUT US</a></li>
+                    <li class="dropdown-btn" (mouseenter)="isMouse = true" (mouseleave)="isMouse = false">
+                        <a (click)="openDropdownSidebar(1)">OUR FOODS <i class="flaticon-down-arrow-1"></i></a>
+                        <div class="dropdown-area" [ngClass]="{'active':dropdownMobileIndex === 1}">
+                            <div class="container">
+                                <div class="dropdown-inner">
+                                    <div class="dropdown-inner__each">
+                                        <figure>
+                                            <!-- <img src="assets/img/devices/cube/cube-10.png" alt=""> -->
+                                        </figure>
+                                    </div>
+                                    <div class="dropdown-inner__each">
+                                        <h3 (click)="openDropdownInner(1)">Ordering Suite<span class="d-lg-none"><i
+                                                    class="flaticon-down-arrow-1"></i></span></h3>
+                                        <ul [ngClass]="{'active':dropdownMobileIndex2 === 1}">
+                                            <li>
+                                                <a routerLink="">Pos Softwares</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">payment Software</a>
+                                            <li>
+                                                <a routerLink="">Integration</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">Broadband</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-inner__each">
+                                        <h3 (click)="openDropdownInner(2)">Marketing / Growth<span class="d-lg-none"><i
+                                                    class="flaticon-down-arrow-1"></i></span></h3>
+                                        <ul [ngClass]="{'active':dropdownMobileIndex2 === 2}">
+                                            <li>
+                                                <a routerLink="">Customer Data</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">Managed Marketing</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">The Valt Porta</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">Valt Phone Marketing</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">Google Business Profile Management</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-inner__each">
+                                        <h3 (click)="openDropdownInner(3)">Integration<span class="d-lg-none"><i
+                                                    class="flaticon-down-arrow-1"></i></span></h3>
+                                        <ul [ngClass]="{'active':dropdownMobileIndex2 === 3}">
+                                            <li>
+                                                <a routerLink="/integration/integration-suite"
+                                                    routerLinkActive="active">Integration Suite
+                                                    Overview</a>
+                                            </li>
+                                            <li routerLink="/integration/pos-partner">
+                                                <a routerLink="">POS Partners</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">Integration Partners</a>
+                                            </li>
+                                            <li>
+                                                <a routerLink="">Delivery Partners</a>
+                                            </li>
+                                            <li><button>Get started today</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a routerLink="/pricing" routerLinkActive="active">MENU</a></li>
+                    <li><a routerLink="/help" routerLinkActive="active" class="header-btn">BOOK A TABLE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

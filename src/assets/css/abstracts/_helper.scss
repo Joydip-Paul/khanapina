@@ -1,0 +1,20 @@
+// Iteration for padding top/bottom and margin top/bottom
+@use './mixins' as *;
+
+@for $i from 1 through 20 {
+    $value: $i * 5;
+
+    .pb-#{$value} {
+        padding-bottom: $value+px;
+    }
+
+    .mb-#{$value} {
+        margin-bottom: $value+px;
+
+        @include breakpoint-max(991px) {
+            @if($i >=10) {
+                margin-bottom: $value / 2 +px;
+            }
+        }
+    }
+}
