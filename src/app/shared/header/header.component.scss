@@ -5,6 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     z-index: 999;
 
@@ -113,31 +114,6 @@
                             background-color: #fff;
                             color: #212121;
                         }
-
-                        // .list-item {
-                        //     display: flex;
-                        //     align-items: center;
-
-                        //     span {
-                        //         margin-right: 10px;
-                        //         background: #eceaed;
-                        //         width: 40px;
-                        //         height: 40px;
-                        //         display: flex;
-                        //         justify-content: center;
-                        //         align-items: center;
-                        //         border-radius: 2px;
-                        //         padding: 10px;
-
-                        //         i {
-                        //             margin-top: 4px;
-                        //         }
-                        //     }
-
-                        //     h4 {
-                        //         font-size: 18px;
-                        //     }
-                        // }
 
                         &:last-child {
                             margin-right: 0;

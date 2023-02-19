@@ -1,0 +1,42 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.about-us {
+    background-color: $primaryColor;
+
+    &__left {
+        color: #fff;
+        padding-right: 30px;
+
+        h4 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: $secondaryColor;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        button {
+            border: 1px solid #fff;
+        }
+    }
+
+    &__right {
+        height: 100%;
+
+        figure {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

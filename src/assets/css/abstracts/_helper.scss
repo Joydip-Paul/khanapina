@@ -8,6 +8,10 @@
         padding-bottom: $value+px;
     }
 
+    .pt-#{$value} {
+        padding-top: $value+px;
+    }
+
     .mb-#{$value} {
         margin-bottom: $value+px;
 

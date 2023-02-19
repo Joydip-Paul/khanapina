@@ -1,9 +1,41 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 img {
     max-width: 100%;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E335D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FFB048;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #233443;
+}
+
+::selection {
+    color: #fff;
+    background: #233443;
+}
+
 h1,
-h2,
+h2 {
+    font-family: 'Crimson Text', serif;
+}
+
 h3,
 h4 {
     font-family: 'Poppins', sans-serif;
@@ -20,6 +52,22 @@ ul {
 }
 
 p {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: 1em;
+}
+
+.fancy-text {
+    font-family: 'Great Vibes', cursive;
+}
+
+.main-btn {
+    background: $primaryColor;
+    border: 1px solid $primaryColor;
+    width: 230px;
+    height: 60px;
+    color: #fff;
+}
+
+.pr-0 {
+    padding-right: 0 !important;
 }
