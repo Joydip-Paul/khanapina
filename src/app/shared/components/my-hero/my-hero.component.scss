@@ -1,0 +1,25 @@
+    .hero {
+        &-section {
+            position: relative;
+            height: 100vh;
+            background-size: cover;
+            width: 100%;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        &-overlay {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #00000085;
+                z-index: -1;
+            }
+        }
+    }
