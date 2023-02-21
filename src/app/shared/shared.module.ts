@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MyHeroComponent } from './components/my-hero/my-hero.component';
-
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +12,8 @@ import { MyHeroComponent } from './components/my-hero/my-hero.component';
     MyHeroComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

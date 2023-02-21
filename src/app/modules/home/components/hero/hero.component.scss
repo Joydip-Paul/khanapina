@@ -11,7 +11,8 @@
         color: #fff;
 
         h4 {
-            font-size: 1.6em;
+            font-size: 1.8em;
+            color: $secondaryColor;
         }
 
         h1 {
@@ -28,8 +29,11 @@
         .service-btn {
             button {
                 background: none;
-                border: 2px solid #fff;
+                border: 2px solid $secondaryColor;
+                background-color: $secondaryColor;
                 text-transform: uppercase;
+                color: $primaryColor;
+                font-weight: 600;
             }
         }
 
