@@ -1,1 +1,11 @@
-<p>food-items works!</p>
+<section class="food-list pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 pb-30" *ngFor="let food of dataList">
+                <a class="food-list__each">
+                    <h3>{{food.title}}</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

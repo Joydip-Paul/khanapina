@@ -4,7 +4,6 @@
         <div class="header-wrapper">
             <div class="header-wrapper__toggler">
                 <div class="logo">
-                    <!-- <a href="#"><img src="assets/images/logo-2.png" alt=""></a> -->
                     <a href="">KHANAPINA</a>
                 </div>
                 <div class="hamburger" (click)="openSidebar()" [ngClass]="{'hamburger-close':isSidebar}">
@@ -14,7 +13,6 @@
                 </div>
             </div>
             <div class="header-wrapper__nav" [ngClass]="{'sidebarActive': isSidebar}">
-                <a routerLink="/" class="logo d-lg-none"><img src="assets/img/logo.png" alt=""></a>
                 <ul>
                     <li routerLink="/"><a>ABOUT US</a></li>
                     <li class="dropdown-btn" (mouseenter)="isMouse = true" (mouseleave)="isMouse = false">

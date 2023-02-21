@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SubSink } from 'subsink';
 import { ApiService } from './../../../../services/api.service';
 
 @Component({
@@ -7,10 +9,38 @@ import { ApiService } from './../../../../services/api.service';
   styleUrls: ['./food-items.component.scss']
 })
 export class FoodItemsComponent implements OnInit {
+  foodList: any = [];
+  dataList: any = [];
 
-  constructor(private foodService: ApiService) { }
+  private subs = new SubSink();
+
+  constructor(private foodService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getFoodList();
+    this.getData();
+  }
+
+  getFoodList(): void {
+    this.subs.sink = this.foodService.getFoodListApi().subscribe((res: any) => {
+      if (res.length) {
+        this.foodList = res;
+        console.log(this.foodList);
+      }
+    })
+  }
+
+  getData(): void {
+    this.subs.sink = this.foodService.getDataApi().subscribe((res: any) => {
+      if (res.length) {
+        this.dataList = res;
+        console.log(this.dataList);
+      }
+    })
+  }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 
 }
