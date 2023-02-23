@@ -9,7 +9,8 @@ import { RouterModule } from '@angular/router';
 import { MenuComponent } from './components/menu/menu.component';
 import { AppDownloadComponent } from './components/app-download/app-download.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { SharedModule } from './../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
+import { AddCartComponent } from './components/add-cart/add-cart.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from './../../shared/shared.module';
     AboutUsComponent,
     MenuComponent,
     AppDownloadComponent,
+    AddCartComponent,
   ],
   imports: [
     CommonModule,

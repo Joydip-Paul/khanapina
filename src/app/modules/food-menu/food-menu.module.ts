@@ -5,6 +5,7 @@ import { FoodMenuRoutingModule } from './food-menu-routing.module';
 import { FoodMenuComponent } from './food-menu.component';
 import { FoodItemsComponent } from './components/food-items/food-items.component';
 import { FoodDetailsComponent } from './components/food-details/food-details.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FoodDetailsComponent } from './components/food-details/food-details.com
   ],
   imports: [
     CommonModule,
-    FoodMenuRoutingModule
+    FoodMenuRoutingModule,
+    RouterModule,
   ]
 })
 export class FoodMenuModule { }

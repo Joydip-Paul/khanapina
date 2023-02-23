@@ -3,7 +3,6 @@
         background-color: #eee;
         padding: 10px;
         border-radius: 5px;
-        height: 200px;
         display: block;
         cursor: pointer;
 
@@ -12,7 +11,17 @@
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            font-size: 1.4em;
+            font-size: 1.2em;
+        }
+        button{
+            background-color: #212121;
+            border: none;
+            color: #fff;
+            padding: 10px 30px;
+            transition: .3s;
+            &:hover{
+                background-color: #d27689;
+            }
         }
     }
 }

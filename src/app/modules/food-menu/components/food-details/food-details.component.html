@@ -1,1 +1,47 @@
-<p>food-details works!</p>
+<section class="food-list pt-100 pb-70">
+    <div class="container">
+        <div class="row" *ngIf="foodData">
+            <div class="col-md-6 pb-30">
+                <div class="food-list__left">
+                    <figure>
+                        <img src={{foodData.strMealThumb}} alt="">
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-6 pb-30">
+                <div class="food-list__right">
+                    <h3>Food Name: {{foodData.strMeal}}</h3>
+                    <h4>Ingradients</h4>
+                    <ul>
+                        <li>{{foodData.strIngredient1}}</li>
+                        <li>{{foodData.strIngredient2}}</li>
+                        <li>{{foodData.strIngredient3}}</li>
+                        <li>{{foodData.strIngredient4}}</li>
+                    </ul>
+                    <p><b>Category:</b> {{foodData.strCategory}}</p>
+                    <div class="service-btn">
+                        <button class="main-btn" type="button">Order Now</button>
+                        <button class="main-btn" (click)="addToCart(foodData)" id="liveToastBtn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <p><b>Instraction: </b>{{foodData.strInstructions}}</p>
+        </div>
+    </div>
+</section>
+
+<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11000">
+    <div id="liveToastBtn" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+</div>

@@ -11,16 +11,30 @@ export class ApiService {
   countryJSONUrl: string = '';
   configJSONUrl: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.url = '/assets/json/';
+   }
 
   public getFoodListApi(): Observable<any> {
-    return this.http.get<any[]>(this.url + "assets/json/food.json").pipe(
+    return this.http.get<any[]>(this.url + "food.json").pipe(
       map(res => res)
     )
   }
 
+
+  public getFoodDetails(id: any): any {
+    return this.http.get<any[]>(this.url + 'food.json')
+    .pipe(map((food: any) => 
+    food.find((p: any) => {
+      // console.log(p, 'details');
+      return p.id === id;
+    })));
+    
+  }
+
+
   public getDataApi(): Observable<any> {
-    return this.http.get<any[]>(this.url + "assets/json/data.json").pipe(
+    return this.http.get<any[]>(this.url + "data.json").pipe(
       map(res => res)
     )
   }

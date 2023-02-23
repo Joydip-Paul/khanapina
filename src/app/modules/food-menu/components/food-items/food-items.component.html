@@ -1,11 +1,45 @@
 <section class="food-list pt-100 pb-70">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 pb-30" *ngFor="let food of dataList">
-                <a class="food-list__each">
-                    <h3>{{food.title}}</h3>
-                </a>
+            <div class="col-lg-4 col-md-6 pb-30" *ngFor="let food of foodList">
+                <div class="food-list__each">
+                    <div [routerLink]="'details/'+food.id">
+                        <figure>
+                            <img src={{food.strMealThumb}} alt="">
+                        </figure>
+                        <h3>{{food.strMeal}}</h3>
+                        <p><b>Category:</b> {{food.strCategory}}</p>
+                        <button (click)="addToCart($event,food)">Add to cart</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Add
+    to cart</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
+            etc.
+        </div>
+        <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
