@@ -1,27 +1,58 @@
 .food-list {
-    &__each {
-        background-color: #eee;
-        padding: 10px;
-        border-radius: 5px;
-        display: block;
-        cursor: pointer;
-
-        h3 {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            font-size: 1.2em;
-        }
-        button{
-            background-color: #212121;
-            border: none;
-            color: #fff;
-            padding: 10px 30px;
-            transition: .3s;
-            &:hover{
-                background-color: #d27689;
-            }
-        }
+  .title-area {
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
     }
+  }
+  &__each {
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    display: block;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+
+    figure {
+      height: 200px;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      margin: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .content {
+      padding: 22px;
+      h3 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 1.4em;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        color: #787878;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #212121;
+        border: none;
+        color: #fff;
+        padding: 10px 30px;
+        transition: 0.3s;
+        &:hover {
+          background-color: #d27689;
+        }
+      }
+    }
+  }
 }
