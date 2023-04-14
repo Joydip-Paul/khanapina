@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { CartService } from './../../../services/cart/cart.service';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-header',
@@ -17,9 +18,14 @@ export class HeaderComponent implements OnInit {
   isHeaderBlack: boolean = false;
   isNoSticky: boolean = false;
   urlSegment: string = '';
+  isMegaMenuOpen:boolean = false;
 
   // Cart variables
   cartCount: number = 0;
+  subSink = new SubSink();
+  developerVisibilitry: boolean = false;
+  
+  @ViewChild('issueRef') issueRef:any;
 
   constructor(
     private router: Router,
@@ -49,6 +55,10 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  isActive(url: string): boolean {
+    return url === this.router.url;
+  }
+
   @HostListener('window:scroll', ['$event']) onscroll() {
     if (window.scrollY > 100) {
       this.navbarFixed = true
@@ -58,13 +68,20 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  @HostListener('document:click', ['$event'])
+  public closeSidebar(event: any) {
+    if (this.isSidebar && !this.issueRef.nativeElement.contains(event.target)) {
+      this.isSidebar = false;
+    }
+  }
+
 
   openSidebar() {
     this.isSidebar = !this.isSidebar;
   }
 
   // Header mobile dropdown click
-  openDropdownSidebar(index: any) {
+  openDropdownSidebar(event:any, index: any) {
     if (window.innerWidth < 992) {
       if (this.dropdownMobileIndex === index) {
         this.dropdownMobileIndex = -1;
@@ -76,7 +93,7 @@ export class HeaderComponent implements OnInit {
   }
 
   // Header mobile inner dropdown click
-  openDropdownInner(index: any) {
+  openDropdownInner(event:any,index: any) {
     if (window.innerWidth < 992) {
       if (this.dropdownMobileIndex2 === index) {
         this.dropdownMobileIndex2 = -1;
@@ -85,6 +102,23 @@ export class HeaderComponent implements OnInit {
         this.dropdownMobileIndex2 = index;
       }
     }
+  }
+
+  hideSidebar(){
+    this.isSidebar = false;
+  }
+
+  // Go to page
+  goToPage(slug:any): void {
+    console.log(slug);
+    this.isMegaMenuOpen = false;
+    this.router.navigate([`${slug}`]);
+    // this.isSidebar = false;
+    this.hideSidebar();
+  }
+
+  ngOnDestroy(): void {
+    this.subSink.unsubscribe();
   }
 
 }

@@ -1,37 +1,51 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 .app-download {
-    &__left {
-        h3 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .service-btn {
-            display: flex;
-            gap: 16px;
-
-            a {
-                img {
-                    height: 40px;
-                    object-fit: cover;
-                    border-radius: 5px;
-                }
-            }
-        }
+  &__left {
+    h3 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
 
-    &__right {
-        figure {
-            width: 400px;
-            margin-left: auto;
-        }
+    p {
+      font-size: 2em;
+      margin-bottom: 20px;
     }
+
+    .service-btn {
+      display: flex;
+      gap: 16px;
+
+      a {
+        img {
+          height: 40px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    @include breakpoint-max(767px) {
+      text-align: center;
+      h3 {
+        font-size: 2.2em;
+      }
+
+      p {
+        font-size: 1.4em;
+      }
+      .service-btn {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__right {
+    figure {
+      width: 400px;
+      margin-left: auto;
+    }
+  }
 }

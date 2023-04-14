@@ -1,0 +1,65 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.best-dish {
+  &__each {
+    background-color: #f1f3f4;
+    border-radius: 5px;
+    overflow: hidden;
+    figure {
+      height: 200px;
+      overflow: hidden;
+      @include breakpoint-max(575px) {
+        height: 100%;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .content {
+      padding: 10px 16px;
+      h3 {
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .time-rating {
+        margin-bottom: 30px;
+        p {
+          font-size: 1em;
+          color: #787878;
+          margin-bottom: 10px;
+        }
+        h4 {
+          font-size: 1.2em;
+          color: #212121;
+          margin-bottom: 10px;
+        }
+      }
+      .price-cart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a {
+          background-color: #212121;
+          border-radius: 50%;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          cursor: pointer;
+          i {
+            color: #fff;
+          }
+        }
+        p {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}

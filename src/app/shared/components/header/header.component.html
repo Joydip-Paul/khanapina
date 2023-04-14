@@ -1,99 +1,207 @@
-<header class="header" [ngClass]="{'header-bg': isMouse, 'fixed-header': navbarFixed, 'header-black':isHeaderBlack}"
-    (scroll)="onscroll()">
-    <div class="container">
-        <div class="header-wrapper">
-            <div class="header-wrapper__toggler">
-                <div class="logo">
-                    <a href="">KHANAPINA</a>
-                </div>
-                <div class="hamburger" (click)="openSidebar()" [ngClass]="{'hamburger-close':isSidebar}">
-                    <span class="first-bar"></span>
-                    <span class="second-bar"></span>
-                    <span class="third-bar"></span>
-                </div>
-            </div>
-            <div class="header-wrapper__nav" [ngClass]="{'sidebarActive': isSidebar}">
-                <ul>
-                    <li routerLink="/"><a>ABOUT US</a></li>
-                    <li class="dropdown-btn" (mouseenter)="isMouse = true" (mouseleave)="isMouse = false">
-                        <a (click)="openDropdownSidebar(1)">OUR FOODS <i class="flaticon-down-arrow-1"></i></a>
-                        <div class="dropdown-area" [ngClass]="{'active':dropdownMobileIndex === 1}">
-                            <div class="container">
-                                <div class="dropdown-inner">
-                                    <div class="dropdown-inner__each">
-                                        <figure>
-                                            <img src="assets/images/food-2.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="dropdown-inner__each">
-                                        <h3 (click)="openDropdownInner(1)">BREAKFAST<span class="d-lg-none"><i
-                                                    class="flaticon-down-arrow-1"></i></span></h3>
-                                        <ul [ngClass]="{'active':dropdownMobileIndex2 === 1}">
-                                            <li routerLink="/integration/pos-partner">
-                                                <a routerLink="">Plater 1</a>
-                                            </li>
-                                            <li>
-                                                <a routerLink="">Plater 2</a>
-                                            </li>
-                                            <li>
-                                                <a routerLink="">Plater 3</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="dropdown-inner__each">
-                                        <h3 (click)="openDropdownInner(2)">LUNCH<span class="d-lg-none"><i
-                                                    class="flaticon-down-arrow-1"></i></span></h3>
-                                        <ul [ngClass]="{'active':dropdownMobileIndex2 === 2}">
-                                            <li routerLink="/integration/pos-partner">
-                                                <a routerLink="">Plater 1</a>
-                                            </li>
-                                            <li>
-                                                <a routerLink="">Plater 2</a>
-                                            </li>
-                                            <li>
-                                                <a routerLink="">Plater 3</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="dropdown-inner__each">
-                                        <h3 (click)="openDropdownInner(3)">DINNER<span class="d-lg-none"><i
-                                                    class="flaticon-down-arrow-1"></i></span></h3>
-                                        <ul [ngClass]="{'active':dropdownMobileIndex2 === 3}">
-                                            <li routerLink="/integration/pos-partner">
-                                                <a routerLink="">Plater 1</a>
-                                            </li>
-                                            <li>
-                                                <a routerLink="">Plater 2</a>
-                                            </li>
-                                            <li>
-                                                <a routerLink="">Plater 3</a>
-                                            </li>
-                                            <li><button class="main-btn">Get started today</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a routerLink="/food-menu" routerLinkActive="active">MENU</a></li>
-                    <li><a routerLink="" routerLinkActive="active" class="header-btn">BOOK A TABLE</a></li>
-                    <li><a data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                            aria-controls="offcanvasExample">Cart {{cartCount}}</a></li>
-                </ul>
-            </div>
+<header
+  class="header"
+  [ngClass]="{
+    'header-bg': isMouse,
+    'fixed-header': navbarFixed,
+    'header-black': isHeaderBlack
+  }"
+  (scroll)="onscroll()"
+  #issueRef
+>
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="header-wrapper__toggler">
+        <div class="logo">
+          <a href="">KHANAPINA</a>
         </div>
+        <div
+          class="hamburger"
+          (click)="openSidebar()"
+          [ngClass]="{ 'hamburger-close': isSidebar }"
+        >
+          <span class="first-bar"></span>
+          <span class="second-bar"></span>
+          <span class="third-bar"></span>
+        </div>
+      </div>
+      <div class="header-wrapper__nav" [ngClass]="{ sidebarActive: isSidebar }">
+        <ul>
+          <li>
+            <a (click)="goToPage('/about-us')" routerLinkActive="active"
+              >ABOUT US</a
+            >
+          </li>
+          <li
+            class="dropdown-btn"
+            (mouseenter)="isMouse = true; isMegaMenuOpen = true"
+            (mouseleave)="isMouse = false; isMegaMenuOpen = false"
+            #issueRef1
+          >
+            <a (click)="openDropdownSidebar($event, 1)"
+              >PRODUCTS <i class="fa-solid fa-chevron-down"></i
+            ></a>
+            <div
+              class="dropdown-area"
+              [ngClass]="{
+                active: dropdownMobileIndex === 1,
+                'dropdown-area__visible': isMegaMenuOpen
+              }"
+              [@mobileDropdownSidebar]="
+                dropdownMobileIndex === 1 ? 'open' : 'closed'
+              "
+            >
+              <div class="container">
+                <div class="dropdown-inner">
+                  <div class="dropdown-inner__each">
+                    <h3 (click)="openDropdownInner($event, 1)">
+                      Food<span class="d-lg-none"
+                        ><i class="fa-solid fa-chevron-down"></i
+                      ></span>
+                    </h3>
+                    <ul
+                      [ngClass]="{ active: dropdownMobileIndex2 === 1 }"
+                      class="nav-area"
+                      [@mobileDropdownSidebar]="
+                        dropdownMobileIndex2 === 1 ? 'open' : 'closed'
+                      "
+                    >
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          (click)="goToPage('/food-menu')"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Hello
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          (click)="goToPage('/food-menu')"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Hello
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="dropdown-inner__each">
+                    <h3 (click)="openDropdownInner($event, 2)">
+                      Food<span class="d-lg-none"
+                        ><i class="fa-solid fa-chevron-down"></i
+                      ></span>
+                    </h3>
+                    <ul
+                      [ngClass]="{ active: dropdownMobileIndex2 === 2 }"
+                      class="nav-area"
+                      [@mobileDropdownSidebar]="
+                        dropdownMobileIndex2 === 1 ? 'open' : 'closed'
+                      "
+                    >
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          (click)="goToPage('/food-menu')"
+                          [ngClass]="{ active: isActive('/food-menu') }"
+                        >
+                          Hello
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          (click)="goToPage('/food-menu')"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Hello
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="dropdown-inner__each">
+                    <h3 (click)="openDropdownInner($event, 3)">
+                      Food<span class="d-lg-none"
+                        ><i class="fa-solid fa-chevron-down"></i
+                      ></span>
+                    </h3>
+                    <ul
+                      [ngClass]="{ active: dropdownMobileIndex2 === 3 }"
+                      class="nav-area"
+                      [@mobileDropdownSidebar]="
+                        dropdownMobileIndex2 === 1 ? 'open' : 'closed'
+                      "
+                    >
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Hello
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Hello
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a routerLinkActive="active" (click)="goToPage('/food-menu')"
+              >MENU</a
+            >
+          </li>
+          <li>
+            <a
+              routerLinkActive="active"
+              class="header-btn"
+              (click)="goToPage('/book-table')"
+              >BOOK A TABLE</a
+            >
+          </li>
+          <li>
+            <a
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+              (click)="hideSidebar()"
+              >Cart {{ cartCount }}</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </header>
 
 <!-- <app-add-cart></app-add-cart> -->
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <h2>Cart is Empty</h2>
-        <button class="main-btn" routerLink="/food-menu">Order Now</button>
-    </div>
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <h2>Cart is Empty</h2>
+    <button class="main-btn" routerLink="/food-menu">Order Now</button>
+  </div>
 </div>

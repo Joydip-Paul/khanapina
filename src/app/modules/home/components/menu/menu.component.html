@@ -1,1 +1,54 @@
-<p>menu works!</p>
+<section class="best-dish pt-100 pb-70">
+  <div class="container">
+    <div class="section-header pb-50">
+      <h2>Order our best dishes</h2>
+      <p>Order from khanapina and get discount</p>
+    </div>
+    <!-- <swiper-container
+      slides-per-view="3"
+      speed="500"
+      loop="true"
+      css-mode="true"
+    >
+      <swiper-slide>
+        <h1>Slide 1</h1>
+      </swiper-slide>
+      <swiper-slide>
+        <h1>Slide 2</h1>
+      </swiper-slide>
+      <swiper-slide>
+        <h1>Slide 3</h1>
+      </swiper-slide>
+    </swiper-container> -->
+    <div class="row">
+      <div
+        class="col-lg-3 col-md-4 col-sm-6 pb-30"
+        *ngFor="let item of bestDishes"
+      >
+        <div class="best-dish__each">
+          <figure>
+            <img src="{{ item.thumb }}" alt="" />
+          </figure>
+          <div class="content">
+            <h3>{{ item.title }}</h3>
+            <div class="time-rating">
+              <p>Delivery Time: {{ item.time }} min</p>
+              <h4>Price: ${{ item.price }}</h4>
+            </div>
+            <div class="price-cart">
+              <star-rating
+                [value]="item.star"
+                [totalstars]="5"
+                checkedcolor="#212121"
+                uncheckedcolor="#787878"
+                size="20px"
+                [readonly]="false"
+              ></star-rating>
+              <a><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
