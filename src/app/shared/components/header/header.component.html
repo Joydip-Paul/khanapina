@@ -230,7 +230,7 @@
   aria-labelledby="offcanvasExampleLabel"
 >
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
     <button
       type="button"
       class="btn-close text-reset"
@@ -239,7 +239,91 @@
     ></button>
   </div>
   <div class="offcanvas-body">
-    <h2>Cart is Empty</h2>
-    <button class="main-btn" routerLink="/food-menu">Order Now</button>
+    <div *ngIf="isCartEmpty">
+      <h2>Cart is Empty</h2>
+      <button class="main-btn" routerLink="/food-menu">Order Now</button>
+    </div>
+    <div class="cart-item">
+      <div class="cart-item__each">
+        <figure>
+          <img src="assets/images/food-5.png" alt="" />
+        </figure>
+        <div class="content">
+          <h3>Burger Delight</h3>
+          <p><span>280</span> * <span>2</span> = <span>560</span></p>
+          <div class="inc-dec">
+            <button>+</button>
+            <p>3</p>
+            <button>-</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item__each">
+        <figure>
+          <img src="assets/images/food-5.png" alt="" />
+        </figure>
+        <div class="content">
+          <h3>Burger Delight</h3>
+          <p>price: BDT 280</p>
+          <div class="inc-dec">
+            <button>-</button>
+            <p>3</p>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item__each">
+        <figure>
+          <img src="assets/images/food-5.png" alt="" />
+        </figure>
+        <div class="content">
+          <h3>Burger Delight</h3>
+          <p>price: BDT 280</p>
+          <div class="inc-dec">
+            <button>-</button>
+            <p>3</p>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item__each">
+        <figure>
+          <img src="assets/images/food-5.png" alt="" />
+        </figure>
+        <div class="content">
+          <h3>Burger Delight</h3>
+          <p>price: BDT 280</p>
+          <div class="inc-dec">
+            <button>-</button>
+            <p>3</p>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-item__each">
+        <figure>
+          <img src="assets/images/food-5.png" alt="" />
+        </figure>
+        <div class="content">
+          <h3>Burger Delight</h3>
+          <p>price: BDT 280</p>
+          <div class="inc-dec">
+            <button>-</button>
+            <p>3</p>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="offcanvas-footer">
+    <div class="dual-button">
+      <button class="main-btn">View Cart</button>
+      <button class="main-btn">Checkout</button>
+    </div>
   </div>
 </div>

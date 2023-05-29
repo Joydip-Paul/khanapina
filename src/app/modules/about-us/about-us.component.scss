@@ -61,6 +61,25 @@
         }
       }
     }
+
+    @include breakpoint-max(767px) {
+      h1 {
+        font-size: 2em;
+      }
+      .breadcrumb {
+        width: 200px;
+      }
+    }
+    @include breakpoint-max(575px) {
+      h1 {
+        font-size: 1.6em;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      p {
+        display: none;
+      }
+    }
   }
 }
 
