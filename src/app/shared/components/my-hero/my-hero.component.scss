@@ -9,6 +9,15 @@
     width: 100%;
     background-repeat: no-repeat;
     z-index: 1;
+
+    &__inner {
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  &__half-bg {
+    height: 450px;
   }
 
   &-overlay {

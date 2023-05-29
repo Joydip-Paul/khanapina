@@ -1,8 +1,11 @@
-<div class="hero-section" [style]="{'background-image': 'url('+backgroundImage+')'}"
-    [ngClass]="{'hero-overlay': isOverlay}">
-    <div class="hero-section__inner">
-        <div class="container">
-            <ng-content></ng-content>
-        </div>
+<div
+  class="hero-section"
+  [style]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+  [ngClass]="{ 'hero-overlay': isOverlay, 'hero__half-bg': ishalfBg }"
+>
+  <div class="hero-section__inner">
+    <div class="container">
+      <ng-content></ng-content>
     </div>
+  </div>
 </div>
