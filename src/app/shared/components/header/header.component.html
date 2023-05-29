@@ -38,7 +38,7 @@
             #issueRef1
           >
             <a (click)="openDropdownSidebar($event, 1)"
-              >PRODUCTS <i class="fa-solid fa-chevron-down"></i
+              >MEALS <i class="fa-solid fa-chevron-down"></i
             ></a>
             <div
               class="dropdown-area"
@@ -53,8 +53,13 @@
               <div class="container">
                 <div class="dropdown-inner">
                   <div class="dropdown-inner__each">
+                    <figure>
+                      <img src="assets/images/res-1.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="dropdown-inner__each">
                     <h3 (click)="openDropdownInner($event, 1)">
-                      Food<span class="d-lg-none"
+                      LUNCH<span class="d-lg-none"
                         ><i class="fa-solid fa-chevron-down"></i
                       ></span>
                     </h3>
@@ -71,7 +76,7 @@
                           (click)="goToPage('/food-menu')"
                           [ngClass]="{ active: isActive('/integration') }"
                         >
-                          Hello
+                          Rui fish with dal
                         </a>
                       </li>
                       <li>
@@ -80,7 +85,7 @@
                           (click)="goToPage('/food-menu')"
                           [ngClass]="{ active: isActive('/integration') }"
                         >
-                          Hello
+                          3 types vorta vhaji
                         </a>
                       </li>
                     </ul>
@@ -88,7 +93,7 @@
 
                   <div class="dropdown-inner__each">
                     <h3 (click)="openDropdownInner($event, 2)">
-                      Food<span class="d-lg-none"
+                      DINNER<span class="d-lg-none"
                         ><i class="fa-solid fa-chevron-down"></i
                       ></span>
                     </h3>
@@ -105,7 +110,7 @@
                           (click)="goToPage('/food-menu')"
                           [ngClass]="{ active: isActive('/food-menu') }"
                         >
-                          Hello
+                          Fresh Oysters Dozen
                         </a>
                       </li>
                       <li>
@@ -114,7 +119,16 @@
                           (click)="goToPage('/food-menu')"
                           [ngClass]="{ active: isActive('/integration') }"
                         >
-                          Hello
+                          Wild Mushroom Arancini
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          (click)="goToPage('/food-menu')"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Authentic deshi mach
                         </a>
                       </li>
                     </ul>
@@ -138,7 +152,7 @@
                           routerLinkActive="active"
                           [ngClass]="{ active: isActive('/integration') }"
                         >
-                          Hello
+                          Italian pasta
                         </a>
                       </li>
                       <li>
@@ -146,7 +160,31 @@
                           routerLinkActive="active"
                           [ngClass]="{ active: isActive('/integration') }"
                         >
-                          Hello
+                          Chicken Chowmin
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Tommy’s Margarita
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          White Cream mashromm
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          routerLinkActive="active"
+                          [ngClass]="{ active: isActive('/integration') }"
+                        >
+                          Jalapina dry meat
                         </a>
                       </li>
                     </ul>

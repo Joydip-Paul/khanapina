@@ -1,28 +1,52 @@
-    @use 'variables' as *;
-    @use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-    .hero {
-        &-section {
-            position: relative;
-            height: 100vh;
-            background-size: cover;
-            width: 100%;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
+.hero {
+  &-section {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
 
-        &-overlay {
-            position: relative;
+  &-overlay {
+    position: relative;
 
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #00000085;
-                z-index: -1;
-            }
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #00000085;
+      z-index: -1;
     }
+  }
+}
+
+@keyframes myanimation {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}

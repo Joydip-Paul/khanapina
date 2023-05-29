@@ -1,7 +1,8 @@
 <section class="food-list pt-100 pb-70">
   <div class="container">
     <div class="title-area">
-      <!-- <h2>Order our best food</h2> -->
+      <h2>Order our best food</h2>
+      <p>Get delicious meal from us. We know your emotion on food.</p>
     </div>
     <div class="row">
       <div class="col-lg-4 col-md-6 pb-30" *ngFor="let food of foodList">
@@ -12,7 +13,8 @@
             </figure>
             <div class="content">
               <h3>{{ food.title }}</h3>
-              <h4>Price: ${{ food.price }}</h4>
+              <p>{{ food.desc }}</p>
+              <h4>Price: BDT {{ food.price }}</h4>
               <button (click)="addToCart($event, food)">Add to cart</button>
             </div>
           </div>
