@@ -23,7 +23,7 @@ import { BookTableComponent } from './modules/book-table/book-table.component';
     CommonModule,
     SharedModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

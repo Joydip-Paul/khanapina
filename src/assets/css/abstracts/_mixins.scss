@@ -6,6 +6,12 @@
     }
 }
 
+@mixin breakpoint-min($minWidth) {
+    @media only screen and (min-width: $minWidth) {
+        @content;
+    }
+}
+
 @mixin box-shadow($x, $y, $blur, $spread) {
     -webkit-box-shadow: $x $y $blur $spread;
     -moz-box-shadow: $x $y $blur $spread;

@@ -22,8 +22,9 @@ export class HeaderComponent implements OnInit {
   dropdownMobileIndex: number = 0;
   dropdownMobileIndex2: number = 0;
   navbarFixed: boolean = false;
+  isNoFixedHeader:boolean = false;
   isHeaderBlack: boolean = false;
-  isNoSticky: boolean = false;
+  isHeaderWhite: boolean = false;
   urlSegment: string = '';
   isMegaMenuOpen: boolean = false;
 
@@ -44,14 +45,25 @@ export class HeaderComponent implements OnInit {
       if (event instanceof NavigationStart) {
         this.urlSegment = event.url;
         if (event['url'] == '') {
-        } else if (
-          event['url'].includes('food-menu/details') ||
-          event['url'] === '/food-menu'
-        ) {
+        } 
+        else if (
+          event['url'].includes('food-menu/details') 
+        ) 
+        {
           this.isHeaderBlack = true;
-        } else {
+          this.isHeaderWhite = false;
+        } 
+        else if (
+          event['url'] === '/food-menu'
+        ) 
+        {
+          this.isHeaderWhite = true;
           this.isHeaderBlack = false;
-          this.isNoSticky = false;
+          this.isNoFixedHeader = true;
+        } 
+        else {
+          this.isHeaderBlack = false;
+          this.isHeaderWhite = false;
         }
       }
     });

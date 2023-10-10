@@ -14,6 +14,10 @@
   width: 100%;
   z-index: 999;
 
+  &-no-fixed {
+    position: absolute;
+  }
+
   &-black {
     background-color: #212121;
   }
@@ -230,11 +234,55 @@
     }
   }
 
+  &-white {
+    background-color: #fff;
+
+    .header-wrapper {
+      .logo {
+        a {
+          color: #212121;
+        }
+      }
+
+      .hamburger {
+        span {
+          background-color: #212121;
+        }
+      }
+
+      &__nav {
+        ul {
+          li {
+            a {
+              color: #212121;
+            }
+
+            .header-btn {
+              background-color: $primaryColor;
+              color: #fff;
+              border-radius: 3px;
+            }
+
+            @media (max-width: 991px) {
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: 991px) {
     flex-direction: column;
     padding: 0;
     width: 100%;
     position: fixed;
+
+    &-white {
+      position: absolute;
+    }
 
     &-wrapper {
       flex-direction: column;
@@ -277,7 +325,8 @@
 
         .dropdown-btn {
           padding: 0 !important;
-          & > a {
+
+          &>a {
             padding: 10px 20px;
           }
         }
@@ -313,10 +362,12 @@
 
               .dropdown-inner {
                 &__each {
+
                   //   border-bottom: 1px solid #585858;
                   &:last-child {
                     margin-bottom: 10px;
                   }
+
                   h3 {
                     font-size: 18px;
                     padding: 10px 6px;
@@ -324,6 +375,7 @@
                     justify-content: space-between;
                     align-items: center;
                     text-transform: uppercase;
+
                     span {
                       padding-right: 12px;
                     }
@@ -353,11 +405,13 @@
                       margin: 0;
                       padding: 10px;
                       border-bottom: 1px solid #d8d8d8;
+
                       a {
                         color: #212121;
                       }
                     }
                   }
+
                   &:last-child {
                     .active {
                       margin-bottom: 20px;
@@ -373,6 +427,7 @@
                 }
               }
             }
+
             .active {
               opacity: 1;
               pointer-events: all;
@@ -413,9 +468,14 @@
             color: #212121;
             cursor: pointer;
           }
+
           .header-btn {
             background-color: $secondaryColor;
           }
+        }
+
+        .cart-btn {
+          width: 55px;
         }
       }
     }
@@ -457,8 +517,6 @@
 }
 
 .offcanvas {
-  // visibility: visible !important;
-  // transform: translateX(0) !important;
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -470,13 +528,16 @@
   ::-webkit-scrollbar-thumb {
     background: #c8c8c8;
   }
+
   &-body {
     padding-top: 0;
+
     .cart-item {
       &__each {
         display: flex;
         border-top: 1px solid #bcbcbc;
         padding-top: 10px;
+
         figure {
           width: 100px;
           height: 90px;
@@ -484,12 +545,15 @@
           background-color: #eee;
           padding: 10px;
           border-radius: 5px;
+
           img {
             object-fit: contain;
           }
         }
+
         .inc-dec {
           display: flex;
+
           button {
             margin-right: 8px;
             background-color: #787878;
@@ -500,20 +564,25 @@
             display: flex;
             align-items: center;
             border-radius: 2px;
+
             &:last-child {
               margin-right: 0;
             }
           }
+
           p {
             margin-right: 8px;
           }
         }
+
         .content {
           margin-left: 20px;
+
           h3 {
             font-size: 1.2em;
             margin-bottom: 5px;
           }
+
           p {
             margin-bottom: 6px;
           }
@@ -521,13 +590,17 @@
       }
     }
   }
+
   &-footer {
     background-color: #dbdbdb;
     padding: 10px;
+
     .dual-button {
       display: flex;
+
       button {
         margin-right: 10px;
+
         &:last-child {
           margin-right: 0;
         }

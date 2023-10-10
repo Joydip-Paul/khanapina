@@ -1,0 +1,18 @@
+<div class="banner" id="banner">
+    <div class="back" (click)="goback()">
+        <button><img src="assets/images/back.svg" alt="">Back</button>
+    </div>
+    <figure>
+        <img src="assets/images/res-pic-1.jpg" alt="">
+    </figure>
+    <!-- [ngClass]="{'s': isBodyScrollTop}" -->
+</div>
+
+<div class="search-area" [ngClass]="{'search-area__sticky': isBodyScrollTop}">
+    <div class="container">
+        <div class="search-area__inner">
+            <input type="text" placeholder="Search food...">
+            <button class="cart">Cart</button>
+        </div>
+    </div>
+</div>

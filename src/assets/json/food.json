@@ -5,7 +5,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-2.png",
-        "price": 124
+        "price": 124,
+        "popular": true,
+        "non_veg": false
     },
     {
         "id": "2",
@@ -13,7 +15,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-3.png",
-        "price": 124
+        "price": 124,
+        "popular": true,
+        "non_veg": false
     },
     {
         "id": "3",
@@ -21,7 +25,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-4.png",
-        "price": 124
+        "price": 124,
+        "popular": true,
+        "non_veg": false
     },
     {
         "id": "4",
@@ -29,7 +35,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-5.png",
-        "price": 124
+        "price": 124,
+        "popular": false,
+        "non_veg": true
     },
     {
         "id": "5",
@@ -37,7 +45,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-2.png",
-        "price": 124
+        "price": 124,
+        "popular": true,
+        "non_veg": false
     },
     {
         "id": "6",
@@ -45,7 +55,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-3.png",
-        "price": 124
+        "price": 124,
+        "popular": true,
+        "non_veg": false
     },
     {
         "id": "7",
@@ -53,7 +65,9 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-4.png",
-        "price": 124
+        "price": 124,
+        "popular": false,
+        "non_veg": true
     },
     {
         "id": "8",
@@ -61,6 +75,8 @@
         "category": "Dessert",
         "desc": "Preheat the oven to 200C\/180C Fan\/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs. Melt the butter in a small pan, then add the biscuit crumbs and stir until coated with butter. Tip into the tart tin and, using the back of a spoon, press over the base and sides of the tin to give an even layer. Chill in the fridge while you make the filling.",
         "thumb": "assets/images/food-5.png",
-        "price": 124
+        "price": 124,
+        "popular": false,
+        "non_veg": true
     }
 ]

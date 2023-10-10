@@ -10,6 +10,7 @@ h6,
 p {
   margin: 0;
 }
+
 img {
   max-width: 100%;
 }
@@ -91,5 +92,17 @@ p {
 
   p {
     font-size: 1.2em;
+  }
+}
+
+@include breakpoint-max (767px) {
+  .pt-mobile-0 {
+    padding-top: 0;
+  }
+}
+
+@include breakpoint-max (991px) {
+  .container {
+    max-width: 900px;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { SubSink } from 'subsink';
 import { ApiService } from '../../../../services/api.service';
@@ -50,6 +50,10 @@ export class FoodItemsComponent implements OnInit {
     event.stopPropagation();
     this.cartService.addToCart(item);
     console.log(event, "Added to the cart");
+  }
+
+  onPlayerReady(event: any) {
+    // You can do any setup or customization here
   }
 
   ngOnDestroy() {

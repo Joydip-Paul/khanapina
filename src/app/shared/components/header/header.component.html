@@ -1,9 +1,11 @@
 <header
-  class="header"
+  class="header d-none d-md-block"
   [ngClass]="{
     'header-bg': isMouse,
     'fixed-header': navbarFixed,
-    'header-black': isHeaderBlack
+    'header-black': isHeaderBlack,
+    'header-white': isHeaderWhite,
+    'header-no-fixed' : isNoFixedHeader
   }"
   (scroll)="onscroll()"
   #issueRef
@@ -206,7 +208,7 @@
               >BOOK A TABLE</a
             >
           </li>
-          <li>
+          <li class="cart-btn">
             <a
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasExample"
